@@ -8,6 +8,12 @@ let hiddenClass = document.getElementById("modal");
 
 const heartButton = document.querySelectorAll(".like-glyph");
 
+//console.log(heartButton)
+
+for (const glyph of heartButton) {
+  glyph.addEventListener("click", () => onHeartClick(glyph));
+}
+
 function onHeartClick(likeGlyph) {
   //const likeGlyph = e.target;
   mimicServerCall()
@@ -34,11 +40,6 @@ function onHeartClick(likeGlyph) {
         }, 3000);
     });
 };
-
-for (const glyph of heartButton) {
-  glyph.addEventListener("click", () => onHeartClick(glyph));
-}
-
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
